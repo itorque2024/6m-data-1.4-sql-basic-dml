@@ -7,7 +7,7 @@ Learners will be able to retrieve specific columns, apply mathematical operators
 
 ### **Theory Recap – *The "Conversation" with Data***
 
-**Tip:** "Imagine you're looking for a specific house. First, you choose what details to look at 'SELECT'. Then, you narrow it down to your favorite neighborhood 'WHERE'. But finally, you want to see the cheapest ones first. That is where 'ORDER BY' comes in. It doesn't change your data; it just organizes the 'view' so the most important information sits right at the top."
+**Narrative:** "Imagine you're looking for a specific house. First, you choose what details to look at 'SELECT'. Then, you narrow it down to your favorite neighborhood 'WHERE'. But finally, you want to see the cheapest ones first. That is where 'ORDER BY' comes in. It doesn't change your data; it just organizes the 'view' so the most important information sits right at the top."
 
 ### **Workshop**
 
@@ -169,7 +169,7 @@ Learners will be able to summarize data using aggregate functions and use the HA
 
 ### **Theory Recap – *The "Bucket" Analogy***
 
-**Instructor Script:** "We know WHERE filters individual rows before they are grouped. But what if you want to filter the groups themselves? Imagine you grouped all flats by town and calculated their average prices. Now, you only want to see towns where that average is over $600,000. You can't use WHERE because the average didn't exist until you grouped them. We use HAVING for this. Think of WHERE as the 'Pre-filter' and HAVING as the 'Post-grouping filter."
+**Narrative:** "We know WHERE filters individual rows before they are grouped. But what if you want to filter the groups themselves? Imagine you grouped all flats by town and calculated their average prices. Now, you only want to see towns where that average is over $600,000. You can't use WHERE because the average didn't exist until you grouped them. We use HAVING for this. Think of WHERE as the 'Pre-filter' and HAVING as the 'Post-grouping filter."
 
 > ### Aggregate functions
 >

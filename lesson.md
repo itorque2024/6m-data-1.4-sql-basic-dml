@@ -202,9 +202,25 @@ FROM resale_flat_prices_2017
 GROUP BY town;
 ```
 
-### **GROUP BY & HAVING – *The "Bucket" Analogy***
+### **GROUP BY & HAVING**
 
-**Narrative:** "We know WHERE filters individual rows before they are grouped. But what if you want to filter the groups themselves? Imagine you grouped all flats by town and calculated their average prices. Now, you only want to see towns where that average is over $600,000. You can't use WHERE because the average didn't exist until you grouped them. We use HAVING for this. Think of WHERE as the 'Pre-filter' and HAVING as the 'Post-grouping filter."
+* **Question** "Look at this query. If you want to find out the town where the average price is more than $600,000, can you use WHERE clause as a filter? Run this SQL and find out what's wrong." 
+
+```SQL
+-- Filter to show only towns with high average prices 
+SELECT town, AVG(resale_price) AS avg_price  
+FROM resale_flat_prices_2017  
+WHERE avg_price > 600000 -- Only show expensive towns  
+ORDER BY avg_price DESC;
+```
+
+**Narrative:** 
+
+"We know WHERE filters individual rows before they are grouped. Now, you only want to see towns where that average is over $600,000. You can't use WHERE because the average didn't exist until you grouped them. 
+
+To see the towns where the average is over $600,000, you need to **GROUP** all flats by town first and then calculat their average prices. 
+
+For such case, we use HAVING for this. Think of WHERE as the 'Pre-filter' and HAVING as the 'Post-grouping filter."
 
 
 > ### Group by
@@ -223,15 +239,7 @@ HAVING avg_price > 600000 -- Only show expensive towns
 ORDER BY avg_price DESC;
 ```
 
-* **Question** "Look at this query. If I move the price filter to a WHERE clause, would I be filtering the towns, or the individual sales? Let's try both and see how the numbers change."
 
-```SQL
--- Filter to show only towns with high average prices 
-SELECT town, AVG(resale_price) AS avg_price  
-FROM resale_flat_prices_2017  
-WHERE avg_price > 600000 -- Only show expensive towns  
-ORDER BY avg_price DESC;
-```
 
 ### **Q\&A**
 
